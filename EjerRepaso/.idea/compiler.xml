@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Ejercicio1" />
+        <module name="HashMapEj4" />
+        <module name="Ejercicio2" />
+        <module name="HashMapEj3" />
+        <module name="Ejercicio4" />
+        <module name="Set_Ej2.2" />
+        <module name="HashSet_Ej2" />
+        <module name="HashSet_Ej1" />
+        <module name="Set_Ej2" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
