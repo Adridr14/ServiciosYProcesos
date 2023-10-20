@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="PB_Ej4" />
-        <module name="Ejemplo2Runable" />
         <module name="Ejemplo3Runnable2" />
         <module name="PB_Ej8" />
         <module name="PB_Ej6" />
+        <module name="Ej14-Join" />
         <module name="PB_Ej7" />
+        <module name="EjemploJoin2" />
+        <module name="Ejemplo2Runable" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
