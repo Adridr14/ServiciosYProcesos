@@ -13,7 +13,16 @@
         <option value="$PROJECT_DIR$/PB_Ej8/pom.xml" />
         <option value="$PROJECT_DIR$/EjemploJoin2/pom.xml" />
         <option value="$PROJECT_DIR$/Ej13-Join/pom.xml" />
+        <option value="$PROJECT_DIR$/EjemploS/pom.xml" />
+        <option value="$PROJECT_DIR$/EjemploSynchronized/pom.xml" />
+        <option value="$PROJECT_DIR$/Ej17-Synchronized/pom.xml" />
+        <option value="$PROJECT_DIR$/Ej18-Synchronized/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/EjemploSynchronized/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-20 (4)" project-jdk-type="JavaSDK">

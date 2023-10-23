@@ -10,13 +10,16 @@
         <module name="Ejemplo3Runnable2" />
         <module name="PB_Ej8" />
         <module name="PB_Ej6" />
-        <module name="Ej14-Join" />
         <module name="PB_Ej7" />
         <module name="EjemploJoin2" />
         <module name="Ejemplo2Runable" />
+        <module name="Ej17-Synchronized" />
+        <module name="Ej18-Synchronized" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Ej14-Join" target="20" />
+      <module name="EjemploSynchronized" target="20" />
       <module name="PB_Ej5" target="1.7" />
     </bytecodeTargetLevel>
   </component>

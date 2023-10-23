@@ -8,21 +8,37 @@ public class TareaContarCapicuas implements Runnable{
 
     @Override
     public void run() {
-        for (int i =comienza;comienza<=acaba;i++)
+        Thread hilo=Thread.currentThread();
+        for (int i =comienza;comienza<=acaba && i< vec.length;i++)
         {
            if((comprobarCapicua(vec[i])))
            {
                this.nPrimos++;
            }
         }
+        System.out.println(hilo.getName()+ " "+nPrimos);
     }
 
     private boolean comprobarCapicua(int n) {
         boolean es=false;
+        String numero= String.valueOf(n);
+        if (n<10){
 
-        if (Integer.reverse(n)==n){
             es=true;
+        } else if (n<100) {
+            if (numero.charAt(0)==numero.charAt(1)){
+
+                es=true;
+            }
+        } else if (n<1000) {
+            if (numero.charAt(0)==numero.charAt(2)){
+
+                es=true;
+            }
         }
+        //for (int i= 0; i<n.length /2; i++)
+        // if (numero.charAt(i) != numero.charAt(longitud -1 -i)
+        //return false; }
         return es;
     }
 
