@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EjemploProductorConsumidor/Ej20-ProductorConsumidor/Ej20-ProductorConsumidor.iml" filepath="$PROJECT_DIR$/EjemploProductorConsumidor/Ej20-ProductorConsumidor/Ej20-ProductorConsumidor.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ejemplo1Thread/Ejemplo1Thread.iml" filepath="$PROJECT_DIR$/Ejemplo1Thread/Ejemplo1Thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjemploProductorConsumidor/EjemploProductorConsumidor.iml" filepath="$PROJECT_DIR$/EjemploProductorConsumidor/EjemploProductorConsumidor.iml" />
       <module fileurl="file://$PROJECT_DIR$/P.A.Ejercicio1.1/P.A.Ejercicio1.1.iml" filepath="$PROJECT_DIR$/P.A.Ejercicio1.1/P.A.Ejercicio1.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/UT1-CreacionDeHilos.iml" filepath="$PROJECT_DIR$/UT1-CreacionDeHilos.iml" />
     </modules>
