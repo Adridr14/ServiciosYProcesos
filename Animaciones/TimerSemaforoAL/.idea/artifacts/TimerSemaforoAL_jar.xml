@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="TimerSemaforoAL:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TimerSemaforoAL_jar</output-path>
+    <root id="archive" name="TimerSemaforoAL.jar">
+      <element id="module-output" name="TimerSemaforoAL" />
+    </root>
+  </artifact>
+</component>
