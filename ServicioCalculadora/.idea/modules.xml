@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ClienteCalculadoraTextoAL/ClienteCalculadoraTextoAL.iml" filepath="$PROJECT_DIR$/ClienteCalculadoraTextoAL/ClienteCalculadoraTextoAL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServicioCalculadora.iml" filepath="$PROJECT_DIR$/ServicioCalculadora.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServidorCalculadoraTextoAL/ServidorCalculadoraTextoAL.iml" filepath="$PROJECT_DIR$/ServidorCalculadoraTextoAL/ServidorCalculadoraTextoAL.iml" />
+    </modules>
+  </component>
+</project>

@@ -5,13 +5,17 @@ import java.net.Socket;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class SumadorNumeros {
+    private static DataOutput alCliente;
+
+    public SumadorNumeros(){
+
+    }
+
     public static void main(String[] args) {
-        if(args.length!=1){
-            System.out.println("Error, Sintaxis: java SumadorNumero <puerto>");
-        }
+
         try {
             //Creacion del servidor
-            ServerSocket servidor = new ServerSocket(Integer.parseInt(args[0]));
+            ServerSocket servidor = new ServerSocket(5000);
 
             System.out.println("Esperando una conexión...");
 
@@ -20,7 +24,7 @@ public class SumadorNumeros {
             System.out.println("Un cliente se ha conectado desde la IP "+socket.getInetAddress().getHostName());
 
             //Obtener los flujos de entrada y salida de información
-            DataOutput alCliente= new DataOutputStream(socket.getOutputStream());
+            DataOutputStream alCliente= new DataOutputStream(socket.getOutputStream());
             DataInputStream delCliente= new DataInputStream(socket.getInputStream());
             //Recibe el texto del cliente y lo devuelve conevertido a Mayusculas
             int numero=delCliente.readInt();
@@ -28,10 +32,22 @@ public class SumadorNumeros {
             int cont=0;
             int max=0;
             while (numero!=0){
-                total
+                total+=numero;
+                System.out.println("Recibiendo del Cliente: "+numero);
+                if (max<numero){max=numero;}
+
+                cont++;
+                numero=delCliente.readInt();
             }
-            alCliente.println("Desde el Servidor: "+linea.toUpperCase());
+            System.out.println("Enviando suma, max y media...");
+            alCliente.writeInt(total);
             alCliente.flush();
+            alCliente.writeInt(max);
+            alCliente.flush();
+            double media= (double) total /cont;
+            alCliente.writeDouble(media);
+            alCliente.flush();
+
 
             //Cierra los streams y el socket
             alCliente.close();

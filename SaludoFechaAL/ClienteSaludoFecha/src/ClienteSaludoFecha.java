@@ -35,6 +35,7 @@ public class ClienteSaludoFecha
 			alServidor.println(texto);
 			alServidor.flush();
 
+
 			//Recibe del servidor
 			String saludo= delServidor.nextLine();
 			System.out.println("Recibido del Servidor: "+saludo);

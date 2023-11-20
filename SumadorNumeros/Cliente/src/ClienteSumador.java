@@ -6,15 +6,11 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class ClienteSumador {
     public static void main(String[] args) {
-        if (args.length != 2)
-        {
-            System.out.println("Uso: java <ip servidor> <puerto servidor>");
-            return;
-        }
+
 
         Scanner sc= new Scanner(System.in);
         try {
-            Socket cliente = new Socket(args[0], Integer.parseInt(args[1]));
+            Socket cliente = new Socket("localhost", 5000);
             System.out.println("Cliente conectado a servidor de IP "+cliente.getPort());
 
             DataOutputStream alServidor= new DataOutputStream(cliente.getOutputStream());
@@ -24,12 +20,16 @@ public class ClienteSumador {
             do{
             System.out.println("Dame un número para enviar al servidor, 0 terminar");
              numero= sc.nextInt();
+
                 alServidor.writeInt(numero);
                 alServidor.flush();
+
             }while (numero!=0);
 
             //Recibe del servidor
-
+            System.out.println("Desde Servidor la suma es: "+delServidor.readInt());
+            System.out.println("Desde Servidor el máximo es: "+delServidor.readInt());
+            System.out.println("Desde Servidor la media es: "+delServidor.readDouble());
 
 
             //Cierra los streams y los sockets
