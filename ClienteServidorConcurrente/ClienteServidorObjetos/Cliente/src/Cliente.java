@@ -51,9 +51,10 @@ public class Cliente {
                 Coche coche= (Coche) entrada.readObject();
                 System.out.println("Recibido\n"+coche.toString());
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                System.err.println(e.getMessage());
+
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+                System.err.println(e.getMessage());
             }
         }
 

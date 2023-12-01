@@ -51,6 +51,8 @@ public class ServidorCalculadora {
             while (true){
                 numCliente++;
                 Socket socket= servidor.accept();
+                System.out.println("En servidor conexión de cliente"+ numCliente+" aceptada desde IP:"+socket.getInetAddress());
+
                 PrintWriter alServidor= new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
                 Scanner delServidor= new Scanner(socket.getInputStream());
                 new ManejadorCliente(numCliente,socket);

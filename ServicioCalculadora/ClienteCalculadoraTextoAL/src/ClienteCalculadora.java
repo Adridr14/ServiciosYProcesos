@@ -48,22 +48,23 @@ public class ClienteCalculadora
         while (Character.toUpperCase(oper) != 'Q') // mientras el cliente no
         // termine de enviar datos
         {
-
            int numero1= teclado.leerNumero();
            int numero2= teclado.leerNumero();
 
            alServidor.println(oper);
            alServidor.println(numero1);
            alServidor.println(numero2);
+            String operacion=delServidor.nextLine();
+            String resultado=delServidor.nextLine();
+            System.out.println(operacion +"\n"+resultado);
             oper= teclado.leerOperacion();
-
         }
+        alServidor.close();
+        delServidor.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println(e.getMessage());
         }
-
     }
-
     /**
      * @param args
      */
