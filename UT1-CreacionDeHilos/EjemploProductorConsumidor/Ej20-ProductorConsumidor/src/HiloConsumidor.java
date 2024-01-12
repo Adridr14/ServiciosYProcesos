@@ -5,6 +5,7 @@ public class HiloConsumidor extends Thread{
     public HiloConsumidor(String nombre, Buffer buffer) {
         this.nombre = nombre;
         this.buffer = buffer;
+
     }
 
     @Override

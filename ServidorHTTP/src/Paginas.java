@@ -20,7 +20,9 @@ public class Paginas {
             + "<head><title>index</title></head>"
             + "<body>"
             + "<h1>¡Enhorabuena!</h1>"
-            + "<p>Tu servidor HTTP mínimo funciona correctamente</p>"
+            + "<p>Tu servidor HTTP mínimo funciona correctamente<br></p>"
+            +"<h2>Páginas interesantes:</h2>"
+            + "<br><a href=\"http://localhost:8066/quijote\">El Quijote - Miguel de Cervantes</a>"
             + "</body>"
             + "</html>";
     //contenido quijote
@@ -42,6 +44,7 @@ public class Paginas {
             + "<head><title>quijote</title></head>"
             + "<body>"
             + "<h1>Así comienza el Quijote</h1>"
+            +"<h2><br>Capítulo 1:</h2>"
             + "<p>En un lugar de la Mancha, de cuyo nombre no quiero "
             + "acordarme, no ha mucho tiempo que vivía un hidalgo de los "
             + "de lanza en astillero, adarga antigua, rocín flaco y galgo "
