@@ -13,4 +13,16 @@ public interface DirectorService {
     public List<Director>findAllDirector();
 
     public Optional<Director> findDirectorById(Long id);
+
+    public Director saveDirector(Director director);
+
+    public String deleteDirector(Long id);
+
+    public Director updateDirector(Director director);
+
+    List<Director>findOldDirector();
+
+    List<Director>findDirectorByYear(int year);
+    List<Director>findDirectorBetweeenYears(int yearFrom,int yearTo);
+
 }
