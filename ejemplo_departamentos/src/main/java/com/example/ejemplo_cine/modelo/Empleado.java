@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-/*@Getter
+@Getter
 @Setter
 @Entity
 @Table(name = "empleados")
@@ -23,4 +23,4 @@ public class Empleado {
     @JoinColumn(name = "Departamento")
     private Departamento departamento;
 
-}*/
+}

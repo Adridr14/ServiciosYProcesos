@@ -23,7 +23,7 @@ public class Departamento {
     @Column(name = "Presupuesto")
     private Integer presupuesto;
 
-   // @OneToMany(mappedBy = "departamento")
-    //private Set<Empleado> empleados = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "departamento")
+    private Set<Empleado> empleados = new LinkedHashSet<>();
 
 }

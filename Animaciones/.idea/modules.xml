@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Animaciones.iml" filepath="$PROJECT_DIR$/.idea/Animaciones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjemploTimerTexto/EjemploTimerTexto.iml" filepath="$PROJECT_DIR$/EjemploTimerTexto/EjemploTimerTexto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TimerBolaHorizontalAL/TimerBolaHorizontalAL.iml" filepath="$PROJECT_DIR$/TimerBolaHorizontalAL/TimerBolaHorizontalAL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TimerContadorAL/TimerContadorAL.iml" filepath="$PROJECT_DIR$/TimerContadorAL/TimerContadorAL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TimerSemaforoAL/TimerSemaforoAL.iml" filepath="$PROJECT_DIR$/TimerSemaforoAL/TimerSemaforoAL.iml" />
+    </modules>
+  </component>
+</project>

@@ -50,4 +50,10 @@ public class DepartamentoServiceImpl implements DepartamentoService {
         }
         return null;
     }
+
+    @Override
+    public String getSumaPresuspuesto() {
+
+        return "Presupuesto total: "+departamentoRepository.getSumaPresuspuesto();
+    }
 }

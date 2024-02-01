@@ -1,6 +1,7 @@
 package com.example.ejemplo_cine.service;
 
 import com.example.ejemplo_cine.modelo.Departamento;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +11,8 @@ public interface DepartamentoService {
 
     public List<Departamento> findAllDepartamento();
 
+
+
     public Optional<Departamento> findDepartamentoById(Long id);
 
     public Departamento saveDepartamento(Departamento director);
@@ -17,4 +20,6 @@ public interface DepartamentoService {
     public String deleteDepartamento(Long id);
 
     public Departamento updateDepartamento(Departamento departamento);
+
+    public String getSumaPresuspuesto();
 }

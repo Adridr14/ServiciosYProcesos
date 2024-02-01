@@ -39,4 +39,9 @@ public class DepartamentoController {
     public  Departamento updateDepartamento(@RequestBody Departamento departamento){
         return  departamentoService.updateDepartamento(departamento);
     }
+
+    @GetMapping("/departamento/presupuesto/suma")
+    public String getSumaPresupuesto(){
+        return departamentoService.getSumaPresuspuesto();
+    }
 }
