@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Información del director</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+    <div th:if="${director}!=null">
+        <h3>Los datos del director son</h3>
+        <p>Id del director: <span th:text="${director.idDirector}"></span> </p>
+        <p>Nombre del director: <span th:text="${director.nombre}"></span> </p>
+        <p>Año de nacimiento: <span th:text="${director.anyoNacimiento}"></span> </p>
+
+    </div>
+    <div th:if="${director}==null">
+        <h2 th:text="${msg}"></h2>
+    </div>
+    <div>
+        <a th:href="@{/director}"> Volver </a>
+    </div>
+    </div>
+</body>
+</html>
+
+
+
+

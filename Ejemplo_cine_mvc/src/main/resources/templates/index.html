@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title th:text="${nombre}"></title>
+    <link th:href="@{/css/bootsrap.min.css}" rel="stylesheet">
+</head>
+    <body>
+    <div class="container">
+        <h1 th:text="${nombre}"></h1>
+        <div><a th:href="@{/director}">Gestión de directores</a></div>
+        <div><a th:href="@{/pelicula}">Gestión de peliculas</a></div>
+    </div>
+    </body>
+</html>
+

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface DirectorRepo extends JpaRepository<Director, Long> {
 
-    @Query("SELECT d from Director  d where D.anyoNacimiento<1960")
+    @Query("SELECT d from Director  d where d.anyoNacimiento<1960")
     List<Director>findOldDirector();
 
     @Query("SELECT d from Director  d where d.anyoNacimiento=?1")

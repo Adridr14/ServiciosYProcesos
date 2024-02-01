@@ -3,6 +3,7 @@ package com.example.ejemplo_cine.modelo;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.Serializable;
 

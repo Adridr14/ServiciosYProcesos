@@ -46,7 +46,7 @@ public class DirectorController {
         return directorService.findOldDirector();
     }
 
-    @GetMapping("/director/{year")
+    @GetMapping("/director/{year}")
         public List<Director> getDirectorByYear(@PathVariable int year){
         return directorService.findDirectorByYear(year);
     }
