@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <title th:text="${nuevo}?'Alta de director':'Modificar un director'"></title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/estilos.css}" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <h1 th:text="${nuevo}?'Alta de director':'Modificar un director'"></h1>
+
+    <form th:action="@{/director/save}" th:method="${nuevo}?'POST':'PUT'" th:object="${director}">
+        <table class="table table-striped">
+            <tr th:if="${director.idDirector}">
+                <td> ID</td>
+                <td><input type="text"  readonly th:field="${director.idDirector}"></td>
+            </tr>
+
+            <tr>
+                <td> Nombre</td>
+                <td><input type="text" th:field="${director.nombre}"></td>
+            </tr>
+
+            <tr>
+                <td> Año Nacimiento</td>
+                <td><input type="text" th:field="${director.anyoNacimiento}" ></td>
+            </tr>
+
+        </table>
+        <input class="btn btn-primary" type="submit" th:value="${nuevo}?'Guardar':'Modifcar'"/>
+    </form>
+    <a th:href="@{/director}">Volver a la lista de directores</a>
+</div>
+<footer th:replace="~{index :: footer}"></footer>
+</body>
+
+</html>

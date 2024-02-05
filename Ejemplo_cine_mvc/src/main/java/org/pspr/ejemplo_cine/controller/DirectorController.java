@@ -7,8 +7,7 @@ import org.pspr.ejemplo_cine.service.DirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -35,5 +34,42 @@ public class DirectorController {
             model.addAttribute("msg","Sin directores para el id: "+id);
         }
         return "director/director";
+    }
+    @GetMapping("/director/add")
+    public String addDirector(  Model model){
+        Director director= new Director();
+        model.addAttribute("director",director);
+        model.addAttribute("nuevo",true);
+        return "director/directorForm";
+    }
+
+    @PostMapping("/director/save")
+    public String saveDirector(@ModelAttribute(value = "director")Director director){
+        directorService.saveDirector(director);
+        return "redirect:/director";
+    }
+
+    @GetMapping("/director/update/{id}")
+    public String updateDirector(@PathVariable Long id, Model model){
+        Optional<Director> director=directorService.findDirectorById(id);
+        if (director.isPresent()){
+            model.addAttribute("director",director.get());
+            model.addAttribute("nuevo",false);
+            return "director/directorForm";
+        }else {
+            return "redirect:/director";
+        }
+    }
+
+    @PutMapping("/director/save")
+    public String updateDirector(@ModelAttribute(value = "director")Director director){
+        directorService.saveDirector(director);
+        return "redirect:/director";
+    }
+
+    @GetMapping("/director/delete/{id}")
+    public  String deleteDirector(@PathVariable Long id){
+        directorService.deleteDirector(id);
+        return "redirect:/director";
     }
 }

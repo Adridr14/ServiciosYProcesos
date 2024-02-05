@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <title th:text="${nombre}"></title>
     <link th:href="@{/css/bootsrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/estilos.css}" rel="stylesheet">
 </head>
     <body>
     <div class="container">
@@ -11,6 +12,11 @@
         <div><a th:href="@{/director}">Gestión de directores</a></div>
         <div><a th:href="@{/pelicula}">Gestión de peliculas</a></div>
     </div>
+    <!-- Footer-->
+    <footer th:fragment="footer" class="py-5 bg-dark">
+        <div class="px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; PSPR - 2ºDAM 2024</p>
+        </div>
+    </footer>
     </body>
 </html>
 

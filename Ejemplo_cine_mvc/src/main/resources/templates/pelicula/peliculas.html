@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Información de las películas</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/estilos.css}" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <h1>Información de las películas</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id Película</th>
+            <th>Título</th>
+            <th>Año de producción</th>
+            <th>Director</th>
+            <th>Modificar</th>
+            <th>Eliminar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pelicula:${peliculas}">
+            <td>
+                    <a th:href="@{/pelicula/{id}(id=${pelicula.idPelicula})}"> <span th:text="${pelicula.idPelicula}"></span></a>
+            </td>
+            <td th:text="${pelicula.titulo}"></td>
+            <td th:text="${pelicula.anyo}"></td>
+            <td th:text="${pelicula.director}?${pelicula.director.nombre}:'-'"></td>
+            <td><a class="btn btn-primary">Editar</a></td>
+            <td><a class="btn btn-danger" >Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan=6 th:if="${todas}">
+                <a class="btn btn-success" >Añadir película</a>
+            </td>
+            <td colspan=3 th:if="!${todas}">
+                <a th:href="@{/director}">Regresar</a>
+            </td>
+            <td colspan=3 th:if="!${todas}">
+                <a class="btn btn-success" >Añadir película a este director</a>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+    <div><a th:href="@{/}">Volver al índice </a></div>
+</div>
+<footer th:replace="~{index :: footer}"></footer>
+</body>
+
+</html>

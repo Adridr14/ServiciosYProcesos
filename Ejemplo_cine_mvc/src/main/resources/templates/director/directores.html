@@ -1,24 +1,51 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Listado de directores</title>
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <meta charset="utf-8" />
+    <title>Información del director</title>
+    <link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/estilos.css}" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <h1>Información de los directores</h1>
-        <ul th:each="director:${directores}">
-            <li>
-                <a th:href="@{/director/{id}(id=${director.idDirector})}" ><span th:text="${director.idDirector}"></span></a>
-                <span th:text="${director.nombre}"></span>
-                <span th:text="${director.anyoNacimiento}"></span>
-            </li>
-        </ul>
 
-        <div>
-            <a th:href="@{/}">Volver al índice </a>
-        </div>
-    </div>
+<body>
+<div class="container">
+    <h1>Información de los directores</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id Director</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Año de nacimiento</th>
+            <th scope="col">Modificar</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Ver películas</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="director:${directores}">
+            <td>
+                <a th:href="@{/director/{id}(id=${director.idDirector})}">
+                    <span th:text="${director.idDirector}">Id</span></a>
+            </td>
+            <td th:text="${director.nombre}"></td>
+            <td th:text="${director.anyoNacimiento}"></td>
+            <td> <a class="btn btn-primary" th:href="@{/director/update/{id}(id=${director.idDirector})}">Editar
+            </a></td>
+            <td> <a class="btn btn-danger" th:href="@{/director/delete/{id}(id=${director.idDirector})}">Eliminar
+            </a></td>
+            <td> <a class="btn btn-secondary" th:href="@{pelicula/director/{id}(id=${director.idDirector})}">Ver películas
+            </a></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr><td colspan=6> <a class="btn btn-success" th:href="@{/director/add}">Añadir director</a></td>
+        </tr>
+        </tfoot>
+    </table>
+    <div><a th:href="@{/}">Volver al índice </a></div>
+</div>
+<footer th:replace="~{index :: footer}"></footer>
 </body>
 </html>
+
