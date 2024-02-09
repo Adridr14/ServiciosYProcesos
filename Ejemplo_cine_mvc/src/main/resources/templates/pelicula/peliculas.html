@@ -30,15 +30,15 @@
             <td th:text="${pelicula.titulo}"></td>
             <td th:text="${pelicula.anyo}"></td>
             <td th:text="${pelicula.director}?${pelicula.director.nombre}:'-'"></td>
-            <td><a class="btn btn-primary">Editar</a></td>
-            <td><a class="btn btn-danger" >Eliminar</a>
+            <td><a class="btn btn-primary" th:href="@{pelicula/update/{id}(id=${pelicula.idPelicula})}">Editar</a></td>
+            <td><a class="btn btn-danger" th:href="@{pelicula/delete/{id}(id=${pelicula.idPelicula})}" >Eliminar</a>
             </td>
         </tr>
         </tbody>
         <tfoot>
         <tr>
             <td colspan=6 th:if="${todas}">
-                <a class="btn btn-success" >Añadir película</a>
+                <a class="btn btn-success" th:href="@{/pelicula/add}" >Añadir película</a>
             </td>
             <td colspan=3 th:if="!${todas}">
                 <a th:href="@{/director}">Regresar</a>

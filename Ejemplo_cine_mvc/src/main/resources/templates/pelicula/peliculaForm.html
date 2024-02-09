@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title th:text="${nuevo}?'Alta de película':'Modificar pelicula'">titulo</title>
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{/css/estilos.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<h1 th:text="${nuevo}?'Alta de pelícuka':'Modificar pelicula'">titulo</h1>
+
+		<form th:action="@{/pelicula/save}" th:method="POST">
+			<table class="table table-striped">
+				<tr th:if="${pelicula.idPelicula}">
+					<td> ID </td>
+					<td> <input type="text" th:field="${pelicula.idPelicula}" readonly> </td>
+				</tr>
+
+				<tr>
+					<td> Titulo </td>
+					<td> <input type="text" th:field="${pelicula.titulo}"></td>
+				</tr>
+
+				<tr>
+					<td> Año Producción </td>
+					<td> <input type="text" th:field="${pelicula.anyo}" ></td>
+				</tr>
+
+				<tr th:if="${nuevo}">
+					<td> Director </td>
+					<td>
+						<select name="idNuevoDirector">
+							<option value="0" th:text="-Select-" selected="selected"></option>
+							<option th:each="director:${directores}" th:text="${director.nombre}" th:value="${director.idDirector}">
+							</option>
+						</select>
+
+					</td>
+				</tr>
+
+				<tr th:unless="${nuevo}">
+					<td> Director </td>
+					<td> <input type="text"  readonly th:field="${pelicula.director.nombre}"></td>
+					<input type="hidden"  name="idNuevoDirector" th:value="${pelicula.director.idDirector}" >
+				</tr>
+
+			</table>
+			<input class="btn btn-success" type="submit" th:value="${nuevo}?'Guardar':'Modificar'" />
+		</form>
+		<a th:href="@{/pelicula}">Volver a la lista de peliculas</a>
+	</div>
+	<footer th:replace="~{index :: footer}"></footer>
+</body>
+
+</html>
