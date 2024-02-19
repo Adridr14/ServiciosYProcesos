@@ -10,4 +10,6 @@ public interface PilotoRepository extends JpaRepository<Piloto, Long> {
 
     @Query("SELECT p from Piloto p order by rand() LIMIT 3")
     List<Piloto> getPilotosRand();
+
+
 }

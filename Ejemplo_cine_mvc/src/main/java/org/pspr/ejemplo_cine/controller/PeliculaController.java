@@ -92,4 +92,16 @@ public class PeliculaController {
         return "redirect:/pelicula";
     }
 
+    @GetMapping("/pelicula/add/director/{id}")
+    public String addPeliculaToDirector(@PathVariable Long id, Model model){
+        Optional<Director>director=directorService.findDirectorById(id);
+        if (director.isPresent()){
+            Pelicula pelicula=new Pelicula();
+            pelicula.setDirector(director.get());
+            model.addAttribute("pelicula",pelicula);
+            return "pelicula/peliculaDirectorForm";
+        }
+        return "redirect:/director";
+    }
+
 }

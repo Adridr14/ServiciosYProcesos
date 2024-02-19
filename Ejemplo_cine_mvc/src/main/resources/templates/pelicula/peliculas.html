@@ -44,7 +44,7 @@
                 <a th:href="@{/director}">Regresar</a>
             </td>
             <td colspan=3 th:if="!${todas}">
-                <a class="btn btn-success" >Añadir película a este director</a>
+                <a class="btn btn-success" th:href="@{/pelicula/add/director/{id} (id=${idDirector})}">Añadir película a este director</a>
             </td>
         </tr>
         </tfoot>

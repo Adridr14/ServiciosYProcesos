@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Alta de película</title>
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{/css/estilos.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Alta de película</h1>
+
+		<form th:action="@{/pelicula/save}" method="POST">
+
+			<table class="table table-striped">
+				<tr>
+					<td colspan="3" th:utext="'Creando pelicula para <b>' + ${pelicula.director.nombre}+ '</b>'"> nombreDirector</td>
+				</tr>
+				<tr>
+					<td> Titulo </td>
+					<td> <input type="text" th:field="${pelicula.titulo}"></td>
+				</tr>
+
+				<tr>
+					<td> Año Producción </td>
+					<td> <input type="text" th:field="${pelicula.anyo}"></td>
+				</tr>
+
+				<tr>
+					<td> Director </td>
+					<td> <input type="text" th:field="${pelicula.director.nombre}" readonly></td>
+					<input type="hidden" name="idNuevoDirector" th:value="${pelicula.director.idDirector}">
+				</tr>
+			</table>
+			<input class="btn btn-success" type="submit" value="Guardar" />
+		</form>
+		<a th:href="@{/pelicula}">Volver a la lista de peliculas</a>
+	</div>
+	<footer th:replace="~{index :: footer}"></footer>
+</body>
+
+</html>

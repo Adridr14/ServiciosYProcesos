@@ -20,27 +20,28 @@
 <!-- Page Content-->
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
-        <div class="row gx-4 gx-lg-5">
+        <div class="row gx-4 gx-lg-5" th:object="${piloto}">
             <div class="col-md-6">
-                <img class="card-img-top mb-5 mb-md-0" /></div>
+                <img class="card-img-top mb-5 mb-md-0" th:src="${piloto.foto}"/></div>
             <div class="col-md-6">
-                <div class="mb-1"><span></span></div>
-                <h1 class="display-5 fw-bolder"></h1>
+                <div class="mb-1"><span th:text="${piloto.equipo}"></span></div>
+                <h1 class="display-5 fw-bolder" th:text="${piloto.nombre}"></h1>
                 <div class="fs-5 mb-5">
                     <ul>
-                        <li><span class="text-black"></span>
-                            <span class="text-black-50"></span>
+                        <li><span class="text-black" >Id:</span>
+                            <span class="text-black-50" th:text="${piloto.id}"></span>
                         </li>
                         <li>
-                            <span class="text-black"> </span>
-                            <span class="text-black-50"></span>
+                            <span class="text-black">Dorsal </span>
+                            <span class="text-black-50" th:text="${piloto.numero}"></span>
                         </li>
                     </ul>
                 </div>
                 <div class="fs-5 mb-5">
                 </div>
                 <div class="d-flex">
-                    <a class="btn btn-outline-dark flex-shrink-0" type="button">
+                    <a class="btn btn-outline-dark flex-shrink-0" type="button"
+                    th:href="@{update/{id}(id=${piloto.id})}">
                         Editar
                     </a>
                 </div>

@@ -22,6 +22,15 @@
     <!-- Content Row-->
     <div id="listado-pilotos" class="row gx-4 gx-lg-5">
         <div  class="col-md-3 mb-5">
+            <div th:each="piloto:${pilotos}">
+                <div class="card-body" th:replace="~{index::tarjeta-piloto}">
+                    <h2 class="card-title" th:text="${piloto.nombre}">
+                    </h2>
+                    <h6 class="card-subtitle mb-2 text-body-secondary" th:text="${piloto.equipo}"></h6>
+                    <div class="text-center">
+                        <img th:class="piloto-portada"  class="rounded" th:src="${piloto.foto}">
+                    </div>
+                </div>
         </div>
     </div>
 </div>
@@ -29,6 +38,6 @@
 <footer th:replace="~{index :: footer}">
 </footer>
 <div th:replace="~{index :: librerias-js}"></div>
-
+</div>
 </body>
 </html>
