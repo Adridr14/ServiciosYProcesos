@@ -10,28 +10,37 @@
 </head>
 
 <body>
+<nav th:replace="~{index :: menu}">
+</nav>
 <div class="container">
     <h1 ></h1>
 
-    <form >
-        <table class="table table-striped">
-            <tr >
-                <td> </td>
-                <td><input type="text" ></td>
-            </tr>
-
-            <tr>
-                <td> </td>
-                <td><input type="text" ></td>
-            </tr>
-
-            <tr>
-                <td> </td>
-                <td><input type="text" ></td>
-            </tr>
-
-        </table>
-        <input class="btn btn-primary" type="submit" />
+    <form  th:action="@{/circuito/save}" th:method="POST">
+        <div class="form-group" th:if="${circuito.id}">
+            <label>Id</label>
+            <input type="text" class="form-control" th:field="${circuito.id}" readonly>
+        </div>
+        <div class="form-group" th:unless="${nuevo}">
+            <label>Longitud</label>
+            <input type="text" class="form-control" th:field="${piloto.numero}">
+        </div>
+        <div class="form-group" th:if="${nuevo}">
+            <label>Numero</label>
+            <input type="text" class="form-control" th:value="${0}">
+        </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" class="form-control" th:field="${piloto.nombre}">
+        </div>
+        <div class="form-group">
+            <label>Equipo</label>
+            <input type="text" class="form-control" th:field="${piloto.equipo}">
+        </div>
+        <div class="form-group">
+            <label>Foto</label>
+            <input type="text" class="form-control" th:field="${piloto.foto}">
+        </div>
+        <input class="btn btn-success" type="submit" th:value="${nuevo}?'Guardar':'Editar'"/>
     </form>
     <a >Volver a la lista de directores</a>
 </div>
